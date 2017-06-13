@@ -4,3 +4,6 @@
 [submodule "preambles"]
 	path = preambles
 	url = https://github.com/cmp0xff/TeX-preambles
+[submodule "logos"]
+	path = logos
+	url = https://github.com/cmp0xff/logos
