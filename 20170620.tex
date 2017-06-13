@@ -70,9 +70,9 @@
 
 
 \title%[Short Paper Title] % (optional, use only with long paper titles)
-{My Understanding of \cite{Wang_2017}}
+{An Introduction to \cite{Wang_2017}}
 
-\subtitle{An Attempt to Avoid the Old $\varLambda$ Problem}
+\subtitle{An Attempt to Avoid the Old Problem of Cosmological Constant}
 
 \author[Wang] % (optional, use only with lots of authors)
 {Yi-Fan Wang (王\ 一帆)}
@@ -84,7 +84,8 @@
 \institute[Uni zu Köln] % (optional, but mostly needed)
 {
   %\inst{1}%
-  Institut für Theoretische Physik, Universität zu Köln}
+	Institut für Theoretische Physik\\
+	Universität zu Köln}
   %\and
   %\inst{2}%
   %Department of Theoretical Philosophy\\
@@ -263,101 +264,48 @@ defernumbers=true]%
 
 \begin{frame}{Overview}
 \begin{itemize}
-\item \textbf{Topic}: to compare the \alert{pure state} of the radiation field 
-used by %\citeauthor{HAWKING1974}
-, and the \alert{thermal equilibrium state} of 
-the field, if it were at Hawking temperature
-\item \textbf{Importance}: to understand Hawking temperature from a new 
-perspective, which plays a central role in BH physics and QG
-\begin{itemize}
-\item information loss, origin of BH entropy, etc.\
-\end{itemize}
-\item \textbf{Methods}: based on a dilaton gravity model, which is more 
-solvable than Einstein--Hilbert; using methods in traditional QFT and QIT
-\item \textbf{Results}: the difference exists and is quantitatively visualised
+\item A vacuum-energy-contributed effective cosmological 
+constant could \alert{differ 120 order-of-magnitude} from observation, which 
+needs an extreme fine-tuning by the bare cosmological constant.
+\item \citeauthor{Wang_2017} consider vacuum energy \alert{density} instead, 
+which is subject to \alert{fluctuation}, and their result moderates the problem.
+\item They assumed a localised RW metric and obtained a FL-like equation for 
+$\rfun{a}{t,\vec{x}}$, whose coefficient contains quantum fluctuation. The 
+solution to the equation is evaluated with the help of theories of parametric 
+oscillations and adiabatic invariances.
+\item The result is qualitatively supported by numerical calculation and 
+further quantitative discussions.
 \end{itemize}
 
 \end{frame}
 
 
-%\subsection{The Basic Problem That We Studied}
+\section{The Old Cosmological Constant Problem}
 
-%\begin{frame}{Make Titles Informative. Use Uppercase Letters.}{Subtitles are 
-%optional.}
-  % - A title should summarize the slide in an understandable fashion
-  %   for anyone how does not follow everything on the slide itself.
-
-%  \begin{itemize}
-%  \item
-%    Use \texttt{itemize} a lot.
-%  \item
-%    Use very short sentences or short phrases.
-%  \end{itemize}
-%\end{frame}
-
-%\begin{frame}{Make Titles Informative.}
-
-%  You can create overlays\dots
-%  \begin{itemize}
-%  \item using the \texttt{pause} command:
-%    \begin{itemize}
-%%    \item
-%      First item.
-%      \pause
-%    \item    
-%      Second item.
-%    \end{itemize}
-%  \item
-%    using overlay specifications:
-%    \begin{itemize}
-%    \item<3->
-%      First item.
-%    \item<4->
-%      Second item.
-%    \end{itemize}
-%  \item
-%    using the general \texttt{uncover} command:
-%    \begin{itemize}
-%      \uncover<5->{\item
-%        First item.}
-%      \uncover<6->{\item
-%        Second item.}
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
-
-\section{Hawking Radiation}
-
-\begin{frame}{Background space-time: spherically collapsing body}{Schematic 
-conformal (Penrose--Carter) diagram}
-\begin{columns}
-
-\begin{column}{.45\linewidth}
-
-%{\begin{center}
-%\input{./graphics/graph_hawking_einstein}
-%\end{center}}
-
-\end{column}
-
-\begin{column}{.5\linewidth}
+\begin{frame}{Cosmological Constant and Vacuum energy}
 \begin{itemize}
-\item QFT on fixed background
-\end{itemize}
-\vskip0pt plus.5fill
-\begin{itemize}
-\item Each point represents an \alert{$S^2$}
-\item $i^\mp$: past / future time-like infinities
-\item $i^0$: space-like infinity
-\item $\mscrI^\mp$: past / future null inf.\
-\item $\mscrh^+$: future event horizon
-\item \textbf{Thick} line: \alert{boundary} of the collapsing body
- 
+\item GR + vacuum QFT
+\begin{equation}
+G_{\mu\nu} + \lambda_\text{b} g_{\mu\nu} = 8\pp\nG T^\text{vac}_{\mu\nu}
+\label{eq:1}
+\end{equation}
+\item In Minkowski space-time, Lorentz invariance requires
+\begin{equation}
+T^\text{vac}_{\mu\nu} = -\rho^\text{vac}_{\mu\nu} \eta_{\mu\nu},
+\end{equation}
+which generalises to curved space-time as
+\begin{equation}
+T^\text{vac}_{\mu\nu} = -\rho^\text{vac}_{\mu\nu} g_{\mu\nu}.
+\end{equation}
+\item Effectively, \cref{eq:1} can be written as
+\begin{align}
+G_{\mu\nu} + \lambda_\text{eff} g_{\mu\nu} = 0, \qquad
+\lambda_\text{eff} = \lambda_\text{b} + 8\pp\nG\rho^\text{vac};\\
+G_{\mu\nu} = -8\pp\nG\rho^\text{vac}_\text{eff} g_{\mu\nu}, \qquad
+\rho^\text{vac}_\text{eff} = \rho^\text{vac} + \frac{\lambda_\text{b}}{8\pp\nG}.
+\end{align}
 \end{itemize}
 
-\end{column}
-
-\end{columns}
 
 \end{frame}
 
