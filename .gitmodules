@@ -1,0 +1,6 @@
+[submodule "TeX-preambles"]
+	path = TeX-preambles
+	url = https://github.com/cmp0xff/TeX-preambles
+[submodule "preambles"]
+	path = preambles
+	url = https://github.com/cmp0xff/TeX-preambles
