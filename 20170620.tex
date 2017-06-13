@@ -70,7 +70,7 @@
 
 
 \title%[Short Paper Title] % (optional, use only with long paper titles)
-{An Introduction to \cite{Wang_2017}}
+{An Introduction to \cite{Wang2017}}
 
 \subtitle{An Attempt to Avoid the Old Problem of Cosmological Constant}
 
@@ -267,7 +267,7 @@ defernumbers=true]%
 \item A vacuum-energy-contributed effective cosmological 
 constant could \alert{differ 120 order-of-magnitude} from observation, which 
 needs an extreme fine-tuning by the bare cosmological constant.
-\item \citeauthor{Wang_2017} consider vacuum energy \alert{density} instead, 
+\item \citeauthor{Wang2017} consider vacuum energy \alert{density} instead, 
 which is subject to \alert{fluctuation}, and their result moderates the problem.
 \item They assumed a localised RW metric and obtained a FL-like equation for 
 $\rfun{a}{t,\vec{x}}$, whose coefficient contains quantum fluctuation. The 
@@ -282,7 +282,7 @@ further quantitative discussions.
 
 \section{The Old Cosmological Constant Problem}
 
-\begin{frame}{Cosmological Constant and Vacuum energy}
+\begin{frame}{Cosmological constant and vacuum energy}
 \begin{itemize}
 \item GR + vacuum QFT
 \begin{equation}
@@ -300,12 +300,30 @@ T^\text{vac}_{\mu\nu} = -\rho^\text{vac}_{\mu\nu} g_{\mu\nu}.
 \item Effectively, \cref{eq:1} can be written as
 \begin{align}
 G_{\mu\nu} + \lambda_\text{eff} g_{\mu\nu} = 0, \qquad
-\lambda_\text{eff} = \lambda_\text{b} + 8\pp\nG\rho^\text{vac};\\
+\lambda_\text{eff} = \lambda_\text{b} + 8\pp\nG\rho^\text{vac};
+\label{eq:Einstein-2}\\
 G_{\mu\nu} = -8\pp\nG\rho^\text{vac}_\text{eff} g_{\mu\nu}, \qquad
-\rho^\text{vac}_\text{eff} = \rho^\text{vac} + \frac{\lambda_\text{b}}{8\pp\nG}.
+\rho^\text{vac}_\text{eff} = \rho^\text{vac} +
+\frac{\lambda_\text{b}}{8\pp\nG}
+\label{eq:Einstein-3}.
 \end{align}
 \end{itemize}
+\end{frame}
 
+\begin{frame}{Hubble parameter and cosmological constant}
+\begin{itemize}
+\item Homogeneity and isotropy: Robertson--Walker metric
+\begin{equation}
+\dd s^2 = -\dd t^2 + \rfun{a^2}{t}\delta_{ij}\,\dd x^i\,\dd x^j.
+\end{equation}
+\item Hubble parameter / expansion rate $H \coloneqq \dot{a}/a$;
+\cref{eq:Einstein-2,eq:Einstein-3} take the corresponding Friedmann--Lemaître
+form
+\begin{align}
+3H^2 = \lambda_\text{eff} = 8\pp\nG\rho^\text{vac}_\text{eff},\\
+3\ddot{a} = \lambda_\text{eff} a = 8\pp\nG\rho^\text{vac}_\text{eff} a.
+\end{align}
+\end{itemize}
 
 \end{frame}
 
