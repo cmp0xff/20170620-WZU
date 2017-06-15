@@ -152,84 +152,9 @@ defernumbers=true]%
 
 \usepackage{braket}
 
-% Mathematical constants
-\newcommand{\ii}{{\Bbbi}}
-\newcommand{\ee}{{\Bbbe}}
-\newcommand{\pp}{{\Bbbpi}}
-
-\newcommand{\lc}{\mitsansc} % speed of light in vacuum
-\newcommand{\bk}{\mitsansk} % Boltzmann's constant
-\newcommand{\phs}{\hslash} % reduced Planck constant
-\newcommand{\ph}{\Planckconst} % Planck constant
-
-% Bracket-like
-\newcommand{\rbr}[1]{{\left(#1\right)}}
-\newcommand{\sbr}[1]{{\left[#1\right]}}
-\newcommand{\cbr}[1]{{\left\{#1\right\}}}
-\newcommand{\abr}[1]{{\left<#1\right>}}
-\newcommand{\vbr}[1]{{\left|#1\right|}}
-\newcommand{\fat}[2]{{\left.#1\right|_{#2}}}
-% Functions; note the space between the name and the bracket!
-\newcommand{\rfun}[2]{{#1}\mathopen{}\left(#2\right)\mathclose{}}
-\newcommand{\sfun}[2]{{#1}\mathopen{}\left[#2\right]\mathclose{}}
-\newcommand{\cfun}[2]{{#1}\mathopen{}\left\{#2\right\}\mathclose{}}
-\newcommand{\afun}[2]{{#1}\mathopen{}\left<#2\right>\mathclose{}}
-\newcommand{\vfun}[2]{{#1}\mathopen{}\left|#2\right|\mathclose{}}
-% Differentials
-\newcommand{\Dif}{\BbbD}
-\newcommand{\Diff}{\,\BbbD}
-\newcommand{\dd}{\Bbbd}
-\newcommand{\ddf}{\,\Bbbd}
-\newcommand{\dva}{\mupdelta} % no better way?!
-\newcommand{\dvar}{\,\mupdelta}
-% Fraction-like
-\newcommand{\frde}[2]{{\frac{\dd{#1}}{\dd{#2}}}}
-\newcommand{\frDe}[2]{{\frac{\Dif{#1}}{\Dif{#2}}}}
-\newcommand{\frpa}[2]{{\frac{\partial{#1}}{\partial{#2}}}}
-% Equal marks
-\newcommand{\eeq}{{\overset{!}{=}}}
-\newcommand{\lls}{{\overset{!}{<}}}
-\newcommand{\ggt}{{\overset{!}{>}}}
-\newcommand{\lle}{{\overset{!}{\le}}}
-\newcommand{\gge}{{\overset{!}{\ge}}}
-% overline-like marks
-\newcommand{\ol}[1]{{\overline{{#1}}}}
-\newcommand{\ul}[1]{{\underline{{#1}}}}
-\newcommand{\tld}[1]{{\widetilde{{#1}}}}
-\newcommand{\ora}[1]{{\overrightarrow{#1}}}
-\newcommand{\ola}[1]{{\overleftarrow{#1}}}
-\newcommand{\td}[1]{{\widetilde{#1}}}
-\newcommand{\what}[1]{{\widehat{#1}}}
-%\newcommand{\prm}{{\symbol{"2032}}}
-
-% Math operators
-% Why does \DeclareMathOperator not work?
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\grad}{grad}
-\DeclareMathOperator{\curl}{curl}
-\DeclareMathOperator{\rot}{rot}
-\DeclareMathOperator{\opdiv}{div}
-\DeclareMathOperator{\opdeg}{deg}
-
-\DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{csch}
-
-\DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator{\tr}{tr}
-
-\DeclareMathOperator{\ad}{ad}
-
-\DeclareMathOperator{\expi}{expi}
-
-% Group and Algebras
-\newcommand{\SO}{\mathsf{SO}}
-\newcommand{\SU}{\mathsf{SU}}
-\newcommand{\so}{\mathfrak{so}}
-\newcommand{\su}{\mathfrak{su}}
-
-% Physical constants
-\newcommand{\nG}{\mitsansG} % Newton's constant
-
+\input{./preambles/math-single}
+\input{./preambles/math-brac}
+\input{./preambles/phys-chem}
 
 \begin{document}
 
@@ -315,20 +240,20 @@ G_{\mu\nu} = -8\pp\nG\rho^\text{vac}_\text{eff} g_{\mu\nu}, \qquad
 \begin{itemize}
 \item Homogeneity and isotropy: Robertson--Walker metric
 \begin{equation}
-\dd s^2 = -\dd t^2 + \rfun{a^2}{t}\delta_{ij}\,\dd x^i\,\dd x^j.
+\dd s^2 = -\dd t^2 + \rfun{a^2}{t}\,\delta_{ij}\,\dd x^i\,\dd x^j.
 \end{equation}
-\item Hubble parameter / expansion rate $H \coloneqq \dot{a}/a$;
+\item Hubble parameter / expansion rate $\hH \coloneqq \dot{a}/a$;
 \cref{eq:Einstein-2,eq:Einstein-3} take the corresponding Friedmann--Lemaître
 form
 \begin{align}
-3H^2 = \lambda_\text{eff} = 8\pp\nG\rho^\text{vac}_\text{eff},\\
+3\hH^2 = \lambda_\text{eff} = 8\pp\nG\rho^\text{vac}_\text{eff},\\
 3\ddot{a} = \lambda_\text{eff} a = 8\pp\nG\rho^\text{vac}_\text{eff} a.
 \label{eq:FL-2}
 \end{align}
 
 \item Solution to \cref{eq:FL-2}
 \begin{equation}
-\rfun{a}{t} = \rfun{a}{t_0}\ee^{H \rbr{t-t_0}}
+\rfun{a}{t} = \rfun{a}{t_0}\,\ee^{\hH \rbr{t-t_0}}
 \end{equation}
 
 \end{itemize}
@@ -344,9 +269,9 @@ vacuum fluctuation of all quantum fields, Electroweak phase transition, etc.
 \item $\lambda_\text{eff}$ by vacuum fluctuation evaluated in Minkowski space:
 taking a scalar field and using sharp-momentum cut-off (also see below),
 \begin{equation}
-\left<\rho^\text{vac}\right> = \frac{\Lambda^4}{16\pp^2}.
+\left<\rho^\text{vac}\right> = \frac{\varLambda^4}{16\pp^2}.
 \end{equation}
-Setting $\Lambda = E_\text{P}$ results in a surpass of the observed value of
+Setting $\varLambda = E_\text{P}$ results in a surpass of the observed value of
 $\lambda_\text{eff}$ by $\sim 10^{120}$.
 
 \end{itemize}
@@ -383,7 +308,7 @@ a_{\vec{k}_2}^\dagger}}
 
 \end{frame}
 
-\begin{frame}{Matter: fluctuation}
+\begin{frame}{Matter: fluctuating vacuum energy density}
 \begin{itemize}
 \item
 $\Ket{0}$ is an eigenstate of $H = \int \dd^3 x T_{00}$, because
@@ -392,7 +317,7 @@ a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 \end{equation}
 \item This is not the case for $T_{00}$, and
 \begin{equation}
-\abr{\rbr{\Delta T_{00}}^2} = \frac{2}{3}\abr{T_{00}}^2,\qquad T_{00} = 
+\abr{\rbr{\Delta T_{00}}^2} = \frac{2}{3}\abr{T_{00}}^2,\qquad \abr{T_{00}} = 
 \frac{\varLambda^4}{16\pp^2}.
 \end{equation}
 
@@ -402,6 +327,70 @@ a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 
 
 \begin{frame}{Space-time: localised Robertson--Walker metric}
+\begin{itemize}
+\item \alert{In}homogeneity and isotropy
+\begin{equation}
+\dd s^2 = -\dd t^2 + \rfun{a}{t, \vec{x}}\,\delta_{ij}\,\dd x^i\,\dd x^j.
+\end{equation}
+\item Generalising the proper distance
+\begin{equation}
+\rfun{L}{1\to 2; t} = \int_{\vec x_1}^{\vec x_2}\sqrt{\rfun{a^2}{t,\vec 
+x}}\,\dd l
+\end{equation}
+and Hubble parameter
+\begin{equation}
+\rfun{\hH}{1\to 2; t} = \frac{\dot \rfun{L}{1\to 2}}{\rfun{L}{1\to 2}}
+\end{equation}
+\item Einstein equations
+\begin{equation}
+G_{\mu\nu} = 8\pp\nG T_{\mu\nu},
+\label{eq:E-20}
+\end{equation}
+where $T_{\mu\nu}$'s subject to fluctuation.
+\end{itemize}
+
+
+\end{frame}
+
+%\begin{frame}{Space-time: fluctuating scale-factor}
+%\begin{itemize}
+%\item $\rbr{0i}$-component of Einstein equations
+%\begin{equation}
+%\partial_i \frac{\dot{a}}{a} = -4\pp\nG T_{0i},
+%\end{equation}
+%the solution to which reads
+%\begin{equation}
+%\fat{\frac{\dot{a}}{a}}{\vec x} = \fat{\frac{\dot{a}}{a}}{\vec x_0}
+%- 4\pp\nG \int_{\vec x_0}^{\vec x}T_{0i}\,\dd x^i
+%\end{equation}
+%\item
+
+%\end{itemize}
+
+
+%\end{frame}
+
+\begin{frame}{Space-time: stochastic oscillator equation for $a$}
+\begin{itemize}
+\item Taking the trace of \cref{eq:E-20} leads to
+\begin{equation}
+\ddot a + \rfun{\varOmega^2}{t,\vec x}\, a = 0,
+\label{eq:sho}
+\end{equation}
+where
+\begin{equation}
+\varOmega^2 = \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
+\end{equation}
+which subjects to fluctuation.
+
+\item $T_{\mu\nu}$ given by KG in Minkowski; evaluate Hubble parameter by 
+solving \cref{eq:sho}
+\end{itemize}
+
+%\begin{itemize}
+%\item Connecting different spacial points: read the paper
+%\end{itemize}
+
 \end{frame}
 
 \section{Solving $\rfun{a}{t,\vec{x}}$: parametric oscillator}
