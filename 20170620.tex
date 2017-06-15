@@ -265,7 +265,7 @@ defernumbers=true]%
 \begin{frame}{Overview}
 \begin{itemize}
 \item If contributed by vacuum energy, the cosmological constant could
-\alert{differ 120 order-of-magnitude} from observation.
+\alert{differ \num{120} order-of-magnitude} from observation.
 \item \citeauthor{Wang2017} consider vacuum energy \alert{density} instead, 
 which is subject to \alert{fluctuation}, and their result moderates the problem.
 \item They assumed a localised RW metric and obtained FL-like equations for 
@@ -342,12 +342,12 @@ form
 vacuum fluctuation of all quantum fields, Electroweak phase transition, etc.
 
 \item $\lambda_\text{eff}$ by vacuum fluctuation evaluated in Minkowski space:
-taking neutral massless Klein--Gordon and sharp-momentum cut-off,
+taking a scalar field and using sharp-momentum cut-off (also see below),
 \begin{equation}
 \left<\rho^\text{vac}\right> = \frac{\Lambda^4}{16\pp^2}.
 \end{equation}
 Setting $\Lambda = E_\text{P}$ results in a surpass of the observed value of
-$\lambda_\text{eff}$ by $\sim 120$ orders of magnitude.
+$\lambda_\text{eff}$ by $\sim 10^{120}$.
 
 \end{itemize}
 
@@ -355,8 +355,51 @@ $\lambda_\text{eff}$ by $\sim 120$ orders of magnitude.
 
 \section{Matter and space-time models}
 
-\begin{frame}{Matter: neutral massless scalar field in flat space-time}
+\begin{frame}{Matter: field and quantisation}
+
+\begin{itemize}
+\item Matter model
+\begin{equation}
+\sfun{S_\text{m}}{\phi} = \int \dd^4 x\,\sbr{-\frac{1}{2}\eta^{\mu\nu}
+\rbr{\partial_\mu \phi}\rbr{\partial_\nu \phi}}
+\end{equation}
+\item Canonical quantisation
+\begin{equation}
+\rfun{\phi}{t,\vec{x}} = \int\frac{\dd^3 k}{\rbr{2\pp}^{3/2}} 
+\frac{1}{\sqrt{2\omega}}
+\rbr{a_{\vec{k}} \,\ee^{-\ii\rbr{\omega t - \vec{k}\cdot\vec{x}}} + 
+\text{h.c.}},
+\end{equation}
+so that
+\begin{align}
+T_{00} &= \frac{1}{2}\rbr{\dot{\phi}^2 + \rbr{\nabla\phi}^2} \\
+&= \int\dd^3 k_1\,\dd^3 k_2\,
+\rfun{f}{a_{\vec{k}_1} a_{\vec{k}_2}^\dagger, a_{\vec{k}_1}^\dagger 
+a_{\vec{k}_2}, \alert{a_{\vec{k}_1} a_{\vec{k}_2}, a_{\vec{k}_1}^\dagger 
+a_{\vec{k}_2}^\dagger}}
+\end{align}
+\end{itemize}
+
+
 \end{frame}
+
+\begin{frame}{Matter: fluctuation}
+\begin{itemize}
+\item
+$\Ket{0}$ is an eigenstate of $H = \int \dd^3 x T_{00}$, because
+\begin{equation}
+a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
+\end{equation}
+\item This is not the case for $T_{00}$, and
+\begin{equation}
+\abr{\rbr{\Delta T_{00}}^2} = \frac{2}{3}\abr{T_{00}}^2,\qquad T_{00} = 
+\frac{\varLambda^4}{16\pp^2}.
+\end{equation}
+
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}{Space-time: localised Robertson--Walker metric}
 \end{frame}
@@ -365,143 +408,13 @@ $\lambda_\text{eff}$ by $\sim 120$ orders of magnitude.
 
 \section{Solving $\rfun{a}{t,\vec{x}}$: adiabatic approximation}
 
-\section{Model of Gravitation}
 
-\begin{frame}[allowframebreaks]{Classical theory of $\rbr{1+1}$d 
-Dilaton Gravity Model}{
-%\cite{Callan1992,Demers1996,Ashtekar2011}
-}% 1/2}
-
-\begin{itemize}
-\item The action of the dilaton gravity model reads
-\begin{equation}
-S = \int \dd^2 x\,\sqrt{-g}\,\cbr{\frac{\ee^{-2\phi}}{\nG}
-\sbr{R+4\rbr{\nabla \phi}^2 + 4\lambda^2}
--\frac{1}{2}\rbr{\nabla f}^2},
-\end{equation}
-\begin{itemize}
-\item $\rfun{\phi}{x}$ the dilaton field, without which topological
-\item $\rfun{f}{x}$ a massless neutral scalar field representing matter
-\item $\lambda > 0$ the cosmological constant
-\end{itemize}
-
-% \begin{align}
-% S &= \int \dd^2 x\,\sqrt{-\ol{g}}\,\cbr{\frac{\ee^{-2\ol{\phi}}}{\nG}
-% \sbr{\ol{R}+4\rbr{\nabla \ol{\phi}}^2 + 4\lambda^2}
-% -\frac{1}{2}\rbr{\nabla f}^2} \nonumber \\
-% &= \int \dd^2 x\,\sqrt{-g}\,\cbr{\frac{1}{\nG}\sbr{R\phi + 4\lambda^2}
-% -\frac{1}{2}\rbr{\nabla f}^2},
-% \label{eq:action-CGHS-dilaton-eli}
-% \end{align}
-% where in \cref{eq:action-CGHS-dilaton-eli}, the \alert{kinetic term} of the 
-% dilaton field $\phi$ is eliminated by substituting $\phi = \ee^{-2\ol{\phi}}$ 
-% and $g_{\alpha\beta} = \ee^{-2\ol{\phi}} \ol{g}_{\alpha\beta}$.
-\item Has a solution which \alert{resembles} the collapsing body in 
-$\rbr{3+1}$-dimensional Einstein gravitation
-\end{itemize}
-
-\begin{columns}
-\begin{column}{.7\linewidth}
-%\begin{center}
-%\input{./graphics/graph_hawking_CGHS}
-%\end{center}
-
-\end{column}
-\begin{column}{.3\linewidth}
-\begin{itemize}
- \item Each point represents a \alert{point}
- \item \textbf{Thick} line: null matter \alert{shell}
-\end{itemize}
-\end{column}
- 
-\end{columns}
-
-
-\end{frame}
 
 
 \begin{frame}[allowframebreaks]{Quantum theory of $\rbr{1+1}$d Dilaton Gravity 
 Model}{%\cite{Demers1996}
 }
 
-\begin{itemize}
-\item Constraint system: Schrödinger quantisation does not apply
-\item (Formally) Dirac quantisation
-\begin{equation}
- \what{\mscrH}_\parallel \sfun{\Psi}{g,\phi,f} = 0, \qquad
- \what{\mscrH}_\perp  \sfun{\Psi}{g,\phi,f} = 0.
-\end{equation}
-
-
-%\item Apply a \alert{Born--Oppenheimer}-type approximation to 
-%$\sfun{\Psi}{g,\phi,f}$ \cite[§~5.4]{Kiefer2012}
-
-%\begin{itemize}
-%\item Separate `\emph{Heavy, slow}' gravity and `\emph{light, fast}' matter
-%\item Apply WKB approximation to the gravity part
-%\item Assume disentanglement $\sfun{\Psi}{g,\phi,f} = \sfun{D}{g, \phi}
-%\sfun{\chi}{g, \phi, f}$
-%\end{itemize}
-
-\item Semi-classical approximation: $\Psi = \ee^{\ii\rbr{\nG^{-1}S_0 + 
-S_1 + \nG S_2 + \ldots}}$
-
-\begin{itemize}
-\item $\rfun{\Omicron}{\nG^{-1}}$: Hamilton--Jacobi equation for pure gravity
-\item $\rfun{\Omicron}{\nG^0}$: $\Psi = \sfun{D}{g, \phi}
-\sfun{\chi}{g, \phi, f}$; functional \alert{Schrödinger equation for matter}
-$\ii \partial_t\sfun{\chi}{f} = \what{H}_\text{m} \sfun{\chi}{f}$, where
-%\begin{align}
-%,
-%\label{eq:functional-sch} \\
-\begin{equation}
-\what{H}_\text{m} = \frac{1}{2}\int_{0}^{+\infty} \dd k\,
-\rbr{-\frac{\mbfdelta^2}{\mbfdelta \rfun{f^2}{k}} + k^2 \rfun{f^2}{k}}.
-\end{equation}
-%\end{align}
-\end{itemize}
-\item A quantum field theory in curved space-time can be \alert{derived}!
-
-\item At early time, the \alert{vacuum} wave functional is 
-%(eq.\ (48))
-\begin{equation}
-\sfun{\chi_0}{f_\text{e}} \propto \cfun{\exp}{-\frac{1}{2} 
-\int_{\BbbR^+}\dd k\, k \, \rfun{f_\text{e}^2}{k}} \sim
-\prod_k \cfun{\exp}{\frac{1}{2} \frac{k}{\Lambda} \, f_\text{e}^2},
-\end{equation}
-while at late time it evolves to %(eq.\ (57) in \cite{Demers1996})
-\begin{equation}
-\sfun{\chi_b}{f_\text{l}} \propto 
-\cfun{\exp}{-\int_{\BbbR}\dd p\, p \,\rfun{\coth}{\frac{\pp 
-p}{2\lambda}} \vbr{\rfun{f_\text{l}}{p}}^2} \sim \prod_p \ee^{\ldots},
-\label{eq:squeezed-wave-functional}
-\end{equation}
-where $\rfun{f_\text{e}}{k}$ and $\rfun{f_\text{l}}{p}$ are the Fourier 
-transform of the matter field at early and late time, respectively.
-%\begin{equation}
-%\rfun{g}{k} = \int_{-\infty}^{+\infty}\dd v\,
-%\frac{\ee^{-\ii k v}}{\sqrt{2\pp}} \rfun{f}{v},
-%\end{equation}
-
-\item At late time, \alert{particle-number expectations} are
-\begin{equation}
-\abr{\rfun{\what{n}_b}{p}}_{\chi_b} = \rbr{\ee^{2\pp\vbr{p}/\lambda}-1}^{-1},
-\end{equation}
-leading to a Hawking-like \alert{black-body temperature}
-\begin{empheq}[box=\fbox]{equation}
-T_\text{HD} \coloneqq \lambda/2\pp.
-\label{eq:hawking-dilaton}
-\end{empheq}
-
-\end{itemize}
-
-
-
-%\item the wave functional of which 
-%has a semi-classical expansion (eq.\ (10) in \cite{Demers1996})
-%\begin{equation}
-%\sfun{\Psi}{\rho,\phi,f} = \ee^{\ii\rbr{\nG^{-1}S_0 + S_1 + \nG S_2 + \ldots}}
-%\end{equation}
 
 \end{frame}
 
