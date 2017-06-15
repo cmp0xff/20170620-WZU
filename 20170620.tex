@@ -287,6 +287,7 @@ $\lambda_\text{eff}$ by $\sim 10^{120}$.
 \begin{equation}
 \sfun{S_\text{m}}{\phi} = \int \dd^4 x\,\sbr{-\frac{1}{2}\eta^{\mu\nu}
 \rbr{\partial_\mu \phi}\rbr{\partial_\nu \phi}}
+\label{eq:matter-classical}
 \end{equation}
 \item Canonical quantisation
 \begin{equation}
@@ -294,6 +295,7 @@ $\lambda_\text{eff}$ by $\sim 10^{120}$.
 \frac{1}{\sqrt{2\omega}}
 \rbr{a_{\vec{k}} \,\ee^{-\ii\rbr{\omega t - \vec{k}\cdot\vec{x}}} + 
 \text{h.c.}},
+\label{eq:matter-quantised}
 \end{equation}
 so that
 \begin{align}
@@ -332,21 +334,20 @@ a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 \begin{equation}
 \dd s^2 = -\dd t^2 + \rfun{a}{t, \vec{x}}\,\delta_{ij}\,\dd x^i\,\dd x^j.
 \end{equation}
-\item Generalising the proper distance
+\item Generalising the proper distance and Hubble parameter
 \begin{equation}
 \rfun{L}{1\to 2; t} = \int_{\vec x_1}^{\vec x_2}\sqrt{\rfun{a^2}{t,\vec 
-x}}\,\dd l
+x}}\,\dd l,\quad
+\rfun{\hH}{1\to 2; t} = \dot \frac{\rfun{L}{1\to 2}}{\rfun{L}{1\to 2}}
 \end{equation}
-and Hubble parameter
-\begin{equation}
-\rfun{\hH}{1\to 2; t} = \frac{\dot \rfun{L}{1\to 2}}{\rfun{L}{1\to 2}}
-\end{equation}
+
 \item Einstein equations
 \begin{equation}
 G_{\mu\nu} = 8\pp\nG T_{\mu\nu},
 \label{eq:E-20}
 \end{equation}
-where $T_{\mu\nu}$'s subject to fluctuation.
+where $T_{\mu\nu}$'s are viewed as (random c-)numbers (and subject to 
+fluctuation)
 \end{itemize}
 
 
@@ -381,9 +382,10 @@ where
 \begin{equation}
 \varOmega^2 = \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
 \end{equation}
-which subjects to fluctuation.
+which is viewed as a (random c-)number (and subject to fluctuation)
 
-\item $T_{\mu\nu}$ given by KG in Minkowski; evaluate Hubble parameter by 
+\item $T_{\mu\nu}$ given by the quantised scalar field 
+\cref{eq:matter-classical,eq:matter-quantised}; evaluate Hubble parameter by 
 solving \cref{eq:sho}
 \end{itemize}
 
@@ -395,200 +397,67 @@ solving \cref{eq:sho}
 
 \section{Solving $\rfun{a}{t,\vec{x}}$: parametric oscillator}
 
+\begin{frame}{Parametric oscillator}
+\begin{itemize}
+\item If $\varOmega$ were definite and periodic in $t$, \cref{eq:sho} would be 
+a Hill's equation, describing \alert{parametric oscillation} (see e.g.\ 
+\cite[§27]{Landau1976} and Wikipedia)
+\item General solution
+\begin{equation}
+\rfun{a}{t,\vec x} = c_1 \ee^{+\hH_{\vec x}t}\rfun{P_1}{t,\vec x}
++ c_2 \ee^{-\hH_{\vec x}t}\rfun{P_2}{t,\vec x}
+\end{equation}
+where $\hH_{\vec x} > 0$ (thus second term exponentially suppressed at late 
+time) and $P_i$'s have the same period as $\varOmega$.
+\item \textbf{Claim}: $\varOmega$ behaves \alert{quasi-periodically}, because 
+of $\sfun{\mathrm{Cov}}{\rfun{\varOmega^2}{t_1, \vec x}, 
+\rfun{\varOmega^2}{t_2, \vec x}}$ (see below)
+
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Quasi-periodicity}
+\begin{itemize}
+\item Covariance of $\rfun{\varOmega^2}{t}$, taken from \cite{Wang2017}
+\begin{center}
+\includegraphics[width=.6\linewidth]{./graphics/FIG.2.png}
+\end{center}
+\item The solution is modified (at late time) to be
+\begin{equation}
+\rfun{a}{t,\vec x} \approx \ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}
+\rfun{P}{t,\vec x},
+\label{eq:approx-a}
+\end{equation}
+where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Proper distance and Hubble parameter revisited}
+\begin{itemize}
+\item The expressions for proper distance and Hubble parameter in terms of 
+\cref{eq:approx-a} are
+\begin{align}
+\rfun{L}{1 \to 2; t} &= \rfun{L}{0}\,\ee^{\hH t},\\
+\rfun{L}{1 \to 2; 0} &= \int_{\vec x_1}^{\vec x_2} \sqrt{\rfun{P^2}{t,\vec 
+x}}\,\dd t,\\
+\hH &= \frac{1}{t} \int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'.
+\end{align}
+\item It looks like that the author assumed averaging $\hH_{\vec x}$ over a 
+long time smooths out the difference between different $\vec x$.
+
+\item $P$ and $L$ are solved by WKB; focusing on $\hH$
+\end{itemize}
+
+\end{frame}
+
+
+
 \section{Solving $\rfun{a}{t,\vec{x}}$: adiabatic approximation}
 
-
-
-
-\begin{frame}[allowframebreaks]{Quantum theory of $\rbr{1+1}$d Dilaton Gravity 
-Model}{%\cite{Demers1996}
-}
-
-
-\end{frame}
-
-\section{Correlator of Field Strength}
-
-%\begin{frame}{Correlation of the Field Strength}{Introduction}
-%\begin{itemize}
-%\item Measures the res
-%\end{itemize}
-
-
-%\end{frame}
-
-\begin{frame}{Correlation of Fourier Modes}{The discrepancy}
-
-\begin{itemize}
-\item The Fourier-mode correlators can be calculated,
-\begin{equation}
-\abr{\rfun{\what{f}^\dagger}{p_1}\rfun{\what{f}}{p_2}} =
-\frac{1}{T_\text{HD}} \rfun{\delta}{p_1 - p_2} \cdot
-\begin{cases}
-\frac{1}{2} \frac{1}{q},
-&\quad \text{vacuum};\\
-\frac{1}{8}\frac{\tanh\frac{q}{4}}{\frac{q}{4}},
-&\quad \chi_b; \\
-\frac{1}{4} \frac{\coth\frac{q}{2}}{\frac{q}{2}},
-&\quad \rfun{\what{\rho}_\text{BE}}{T_\text{HD}},
-\end{cases}
-\end{equation}
-where $q \coloneqq p_1/T_\text{HD}$
-\item Diagonal elements (fluctuations) are plotted
-\end{itemize}
-
-%Note that
-%\begin{equation}
-%\abr{\rbr{\mbfDelta\what{f}}^2} = \abr{\what{f}^2} - \abr{\what{f}}^2 = 
-%\abr{\what{f}^2} .
-%\end{equation}
-\end{frame}
-
-\begin{frame}{Correlation of Fourier Modes}{Fluctuation of the Fourier 
-modes: diagram in log-log scale}
-
-%\begin{center}
-%\input{./graphics/graph_fluc_fourier_color}
-%\end{center}
-
-\end{frame}
-
-\begin{frame}{Correlation of Fourier Modes}{Fluctuation of the Fourier 
-modes: interpretation}
-
-\begin{itemize}
-	\item Vacuum fluctuation
-	\begin{equation}
-	\abr{\vbr{\what{f}}^2}_\text{vac} = \rfun{\Omicron}{q^{-1}}
-	\end{equation}
-
-	\item A black hole does \alert{not} alter the \alert{high}-energy
-	processes
-	\begin{equation}
-	\abr{\vbr{\what{f}}^2}_{\chi_b} \approx
-	\abr{\vbr{\what{f}}^2}_\text{th} \approx
-	\abr{\vbr{\what{f}}^2}_\text{vac} = \rfun{\Omicron}{q^{-1}},
-	\quad \vbr{p} \gg T_\text{HD}
-	\end{equation}
-
-	\item A black hole \alert{suppresses} low-energy fluctuation of the
-	\alert{pure} state, while \alert{enhancing} that of the
-	\alert{thermal} state
-	\begin{equation}
-	\rfun{\Omicron}{1} \sim \abr{\vbr{\what{f}}^2}_{\chi_b} \ll
-	\abr{\vbr{\what{f}}^2}_\text{vac} \ll
-	\abr{\vbr{\what{f}}^2}_\text{th} \sim \rfun{\Omicron}{q^{-2}},
-	\quad \vbr{p} \ll T_\text{HD}
-	\end{equation}
-	\item Critical scale $\vbr{p} \sim T_\text{HD}$
-\end{itemize}
-
-\end{frame}
-
-\section{Distance between Density Operators}
-
-\begin{frame}{Trace Distance %\cite[ch.~9]{Wilde2009}
-}{Definitions}
-\begin{itemize}
-\item Trace distance between Hermitian operators $\what{M}$ and $\what{N}$
-\begin{equation}
-\rfun{T}{\what{M}, \what{N}} \coloneqq \frac{1}{2} 
-\tr \sqrt{\rbr{\what{M}-\what{N}}^\dagger\rbr{\what{M}-\what{N}}}
-\label{eq:def-trace-dist}
-\end{equation}
-% \begin{itemize}
-% \item Positivity, homogeneity, triangle ineq., isometric inv.
-% \end{itemize}
-\item For \alert{density operators} $\what{\rho}$ and $\what{\sigma}$,
-\begin{itemize}
-\item $0 \le \rfun{T}{\what{\rho}, \what{\sigma}} \le 1$;
-\item Controlled by \alert{fidelity} in %\cite{Fuchs1999}
-\begin{empheq}[box=\fbox]{equation}
-1 - \rfun{F}{\what{\rho},\what{\sigma}} \le \rfun{T}{\what{\rho},\what{\sigma}}
-\le \sqrt{1 - \rfun{F^2}{\what{\rho},\what{\sigma}}},
-\label{eq:ineq-fvdg}
-\end{empheq}
-where we only need
-\begin{equation}
-\rfun{F}{\Ket{\alpha},\what{\sigma}} \coloneqq \Braket{\alpha | 
-\what{\sigma} | \alpha}^\frac{1}{2}.
-\label{eq:fidelity-pure-mixed}
-\end{equation}
-\item In our application, $T$ is difficult while $F$ can be obtained.
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}[allowframebreaks]{Single-mode Distances between the Density 
-Operators}{Bounds set by fidelity and \cref{eq:ineq-fvdg}}
-
-\begin{itemize}
-
-%\item $\sfun{\chi}{f} \sim S$, $\sfun{\Psi}{g, \phi, f} \sim U$
-
-\item The pure state can be decomposed upon discretisation 
-$\sfun{\chi_b}{f} \sim \sum_p \rfun{\chi_b^\rbr{p}}{f_p} \equiv \sum_p 
-\Braket{f_p | \chi_b^{\rbr{p}}}$, where $f_p \coloneqq \rfun{f}{p}$
-
-\item So is the thermal density operator $\rfun{\what{\rho}_\text{th}}{T} \sim
-\bigotimes_p \rfun{\what{\rho}_\text{th}^\rbr{p}}{T}$
-
-\item Fidelity (in \cref{eq:ineq-fvdg}) can be factorised as well
-\begin{equation}
-F \equiv \Braket{\chi_b | \what{\rho}_\text{th} | \chi_b}^\frac{1}{2} \sim
-\prod_p \Braket{\chi_b^{\rbr{p}} | \what{\rho}_\text{th}^{\rbr{p}}
-| \chi_b^{\rbr{p}}}^\frac{1}{2} \eqqcolon \prod_p F^{\rbr{p}};
-\end{equation}
-\item $F^{\rbr{p}}$ can be computed \alert{in order to find bounds of $T$}
-\begin{equation}
-\rfun{F^{\rbr{p}}}{\Ket{p},\rfun{\what{\rho}_\text{th}^\rbr{p}}{T_\text{HD}}}
-= \frac{\sqrt{u-1}}{\sqrt[4]{u^2+u+1}},\quad
-u \coloneqq \ee^q \equiv \ee^{\vbr{p}/T_\text{HD}}.
-\label{eq:fidelity-pt}
-\end{equation}
-\end{itemize}
-
-%\begin{center}
-%\input{./graphics/graph_trace_dist_mode_bounds_color}
-%\end{center}
-%Difference goes exponentially small w.r.t.\ $p$ or $\rbr{\text{wave 
-%length}}^{-1}$
-
-\end{frame}
-
-
-\begin{frame}[allowframebreaks]{All-modes Distances between the Density 
-Operators}{Bounds set by fidelity and \cref{eq:ineq-fvdg}}
-
-\begin{itemize}
-
-\item `Go to the continuum limit': $\Lambda$ dimension regulator
-\begin{equation}
-\sum_p \rfun{g}{p} \to \frac{1}{2\pp\Lambda} \int \dd p\,\rfun{g}{p},
-\end{equation}
-
-\item Analogously, to regularise a product
-\begin{equation}
-\prod_p \rfun{f}{p} \equiv \cfun{\exp}{\sum_p 
-\ln\rfun{f}{p}} \to \cfun{\exp}{\frac{1}{2\pp\Lambda}
-\int \dd p\,\ln\rfun{f}{p}}
-\end{equation}
-
-\item Regularised $F$ can be calculated \alert{in order to set bounds of $T$}
-\begin{equation}
-\rfun{F}{\chi_b, \what{\rho}_\text{th}} = 
-\cfun{\exp}{\frac{2}{2\pp\Lambda}\int_0^{+\infty}\dd p\,\ln F^{\rbr{p}}} =
-\rfun{\exp}{-\frac{\pp}{9} \frac{T_\text{HD}}{\Lambda}}
-\end{equation}
-\end{itemize}
-
-
-%\begin{center}
-%\input{./graphics/graph_trace_dist_total_bounds_color}
-%\end{center}
-%Difference goes exponentially small w.r.t.\ $T_\text{HD}$ or $M^{-1}$
-
-\end{frame}
 
 
 
