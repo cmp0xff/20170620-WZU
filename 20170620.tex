@@ -449,7 +449,7 @@ x}}\,\dd t,\\
 \item It looks like that the author assumed averaging $\hH_{\vec x}$ over a 
 long time smooths out the difference between different $\vec x$.
 
-\item $P$ and $L$ are solved by WKB; focusing on $\hH$
+\item $P$ and $L$ can be solved by WKB; the presentation will focus on $\hH$
 \end{itemize}
 
 \end{frame}
@@ -458,7 +458,42 @@ long time smooths out the difference between different $\vec x$.
 
 \section{Solving $\rfun{a}{t,\vec{x}}$: adiabatic approximation}
 
+\begin{frame}{Review: canonical transformation}
+\begin{itemize}
+\item Introducing the generating function (of the second kind)
+\begin{equation}
+S = \int p\,\dd q - H \,\dd t
+\equiv \int P\,\dd Q - K\,\dd t + \dd \rbr{-QP + G_2}
+\end{equation}
+where $H = \rfun{H}{q, p, t}$, $K = \rfun{K}{Q, P, t}$, $G_2 = \rfun{G_2}{q, P, 
+t}$, so that
+\begin{equation}
+\int \rbr{p - \partial_q G_2}\,\dd q + \rbr{Q - \partial_P G_2}\,\dd P 
+- \rbr{H - \partial_t G_2 - K}\,\dd t\equiv 0.
+\end{equation}
+\item Arbitrariness of the track in phase space requires
+\begin{equation}
+p = \partial_q G_2,\quad
+Q = \partial_P G_2,\quad
+K = H - \partial_t G_2.
+\end{equation}
+\item It can be shown that $G_2$ generates a Possion-bracket-keeping 
+transformation from $\rbr{q, p; H}$ to $\rbr{Q, P; K}$
+\end{itemize}
+\end{frame}
 
+\begin{frame}{Action-angle variables}
+\begin{itemize}
+\item Consider a $\rfun{G_2}{q, J}$ which brings $\rbr{q, p; H}$ to 
+$\rbr{\varphi, I; \rfun{K}{I}}$
+\item Dynamics in the new variables reads
+\begin{alignat}{3}
+\dot \varphi &= \partial_I K,&\quad \dot I &= 0; \\
+\varphi &= \partial_I K\,t+\varphi_0,&\quad I &= \text{const.}
+\end{alignat}
+
+\end{itemize}
+\end{frame}
 
 
 \section*{Summary}
@@ -538,130 +573,9 @@ Trace distance: goes exponentially \alert{small} with black hole
 
 \section<presentation>*{More on Trace Distance and Fidelity}
 
-\begin{frame}{More on Trace Distance %\cite[ch.~9]{Wilde2009}
-}{Interpretation}
-\begin{itemize}
-\item Maximal probability-difference obtainable
-\begin{equation}
-\rfun{T}{\what{\rho}, \what{\sigma}} = \max_{0 \le \what{\Lambda} \le 
-\what{1}}
-\cfun{\tr}{\what{\Lambda}\rbr{\what{\rho}-\what{\sigma}}},
-\end{equation}
-where all eigenvalues of $\what{\Lambda}$ are in the range $\sbr{0,1}$
-\item E.g.\ $\what{\Lambda} \coloneqq \Ket{\alpha}\Bra{\alpha}$, 
-$\Ket{\alpha}$
-eigenstate of $\what{\Alpha}$ with eigenvalue $\alpha$
-\begin{itemize}
-\item $\cfun{\tr}{\what{\Lambda}\what{\rho}}$: the probability of getting
-$\alpha$ in measuring $\what{\Alpha}$
-\item $\cfun{\tr}{\what{\Lambda}\rbr{\what{\rho}-\what{\sigma}}}$: the
-difference of the probability above
-\item $\rfun{T}{\what{\rho}, \what{\sigma}}$: the maximal value of the 
-difference above
-\end{itemize}
-\end{itemize}
-
-\end{frame}
 
 
 
-
-\begin{frame}{More on Fidelity}
-\begin{itemize}
-\item General definition %\cite[ch.~6]{Petz2008}
-\begin{align}
-\rfun{F}{\Ket{\alpha},\Ket{\beta}} &= \vbr{\Braket{\alpha | \beta }} \\
-\rfun{F}{\Ket{\alpha},\what{\sigma}} &= \sqrt{\Braket{\alpha | \what{\sigma} | 
-\alpha}}
-\tag{\ref{eq:fidelity-pure-mixed} rev.}\\
-\rfun{F}{\what{\rho},\what{\sigma}} &= \tr\sqrt{\what{\rho}^\frac{1}{2} 
-\what{\sigma} \what{\rho}^\frac{1}{2}}
-\end{align}
-\item Intepretation: faithfulness
-\begin{equation}
-\rfun{F}{\Ket{\alpha}, \Ket{\alpha}} = 1
-\end{equation}
-
-\end{itemize}
-
-\end{frame}
-
-\section<presentation>*{Foundation of Statistical Physics}
-
-\begin{frame}{Another New Foundation of Statistical Physics 
-%\cite{Popescu2006}
-}{Specific and easy version of the construction}
-
-\begin{itemize}
-\item Total isolated system $U$ with \alert{energy} constraint 
-$\abr{\what{H}_U} \coloneqq E_U$, divided into a \alert{(sub)system} $S$ and 
-an environment $E$
-
-\item Hilbert spaces $\mscrH_R \supseteq \mscrH_U = \mscrH_S \otimes \mscrH_E$;
-$\what{1}_R$ identity on $\mscrH_R$, dimension $d_R \coloneqq \dim \mscrH_R < 
-+\infty$
-
-\item Equiprobable / maximal-ignorant state of $U$
-\begin{equation}
-\what{\mscrE}_R \coloneqq d_R^{-1} \what{1}_R \in \mscrH_R
-\end{equation}
-
-\item Hamiltonians $\what{H}_U = \what{H}_S + \what{H}_E + \what{H}_\text{int}$
-
-\item \alert{Canonical state} of $S$ with energy 
-constraint %\cite[§~28]{Landau1980}
-\begin{equation}
-\what{\Omega}_S^\rbr{\text{E}} \coloneqq \tr_E \what{\mscrE}_R 
-\propto\rfun{\exp}{- 
-\what{H}_S/T_\text{th}}
-\end{equation}
-
-\item \alert{Theorem}: $\forall \Ket{\phi} \in \mscrH_R$, the reduced state of 
-$S$
-\begin{empheq}[box=\fbox]{equation}
-\tr_E \Ket{\phi}\Bra{\phi} \eqqcolon \rfun{\what{\rho}_S}{\phi} \approx 
-\what{\Omega}_S^\rbr{\text{E}}.
-\end{empheq}
-
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Another New Foundation of Statistical Physics 
-%\cite{Popescu2006}
-}{Generic and exact version of the construction}
-
-\begin{itemize}
-\item \alert{Arbitrary} constraint $R$; study the \alert{trace 
-distance} $T$ between $\rfun{\what{\rho}_S}{\phi}$ and $\what{\Omega}_S$
-
-\item Lemma: \alert{average distance} is small w.r.t.\ $d_S/d_E^\text{eff}$
-\begin{equation}
-\abr{\rfun{T}{\rfun{\what{\rho}_S}{\phi}, \what{\Omega}_S}} \le 
-\tfrac{1}{2}\sqrt{d_S/d_E^\text{eff}}
-\end{equation}
-
-\item Theorem: \alert{probability of large deviation} is exponentially 
-small w.r.t.\ the distance; an easy version
-\begin{equation}
-\frac{\sfun{V}{\cbr{\Ket{\phi} \,\Big |\,
-\rfun{T}{\rfun{\what{\rho}_S}{\phi}, \what{\Omega}_S} \geq 
-d_R^{-\frac{1}{3}}}}}
-{\sfun{V}{\cbr{\Ket{\phi} }}} \leq
-4\rfun{\exp}{- \frac{2d_R^{\frac{1}{3}}}{9\pp^3} }
-\end{equation}
-
-\item Effective dimension of $E$: setting
-$\what{\Omega}_E = \tr_S \what{\mscrE}_R$,
-\begin{equation}
-d_U/d_S \equiv d_E \ge d_E^\text{eff}
-\coloneqq \rbr{\tr \what{\Omega}_E^2}^{-1} \ge d_R/d_S.
-\end{equation}
-
-\end{itemize}
-
-\end{frame}
 
 
 \end{document}
