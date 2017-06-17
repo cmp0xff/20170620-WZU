@@ -446,7 +446,7 @@ where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
 x}}\,\dd t,\\
 \hH &= \frac{1}{t} \int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'.
 \end{align}
-\item It looks like that the author assumed averaging $\hH_{\vec x}$ over a 
+\item It looks like that the authors assumed averaging $\hH_{\vec x}$ over a 
 long time smooths out the difference between different $\vec x$.
 
 \item $P$ and $L$ can be solved by WKB; the presentation will focus on $\hH$
@@ -460,16 +460,15 @@ long time smooths out the difference between different $\vec x$.
 
 \begin{frame}{Review: canonical transformation}
 \begin{itemize}
-\item Introducing the generating function (of the second kind)
+\item Introducing the (type-2) generating function $\rfun{G_2}{q, P, t}$
 \begin{equation}
 S = \int p\,\dd q - H \,\dd t
 \equiv \int P\,\dd Q - K\,\dd t + \dd \rbr{-QP + G_2}
 \end{equation}
-where $H = \rfun{H}{q, p, t}$, $K = \rfun{K}{Q, P, t}$, $G_2 = \rfun{G_2}{q, P, 
-t}$, so that
+where $H = \rfun{H}{q, p, t}$, $K = \rfun{K}{Q, P, t}$, so that
 \begin{equation}
 \int \rbr{p - \partial_q G_2}\,\dd q + \rbr{Q - \partial_P G_2}\,\dd P 
-- \rbr{H - \partial_t G_2 - K}\,\dd t\equiv 0.
++ \rbr{K - H + \partial_t G_2}\,\dd t\equiv 0.
 \end{equation}
 \item Arbitrariness of the track in phase space requires
 \begin{equation}
@@ -478,22 +477,54 @@ Q = \partial_P G_2,\quad
 K = H - \partial_t G_2.
 \end{equation}
 \item It can be shown that $G_2$ generates a Possion-bracket-keeping 
-transformation from $\rbr{q, p; H}$ to $\rbr{Q, P; K}$
+transformation from $\rbr{q, p; H}$ to $\rbr{Q, P; K}$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Action-angle variables}
 \begin{itemize}
-\item Consider a $\rfun{G_2}{q, J}$ which brings $\rbr{q, p; H}$ to 
-$\rbr{\varphi, I; \rfun{K}{I}}$
+\item Consider a $\rfun{G_2}{q, J}$ which brings $\rbr{q, p; \rfun{H}{q, p}}$ 
+to $\rbr{\varphi, I; \rfun{K}{I}}$; note the time-independence
 \item Dynamics in the new variables reads
 \begin{alignat}{3}
 \dot \varphi &= \partial_I K,&\quad \dot I &= 0; \\
-\varphi &= \partial_I K\,t+\varphi_0,&\quad I &= \text{const.}
+\Rightarrow \varphi &= \rbr{\partial_I K}\,t+\varphi_0,&\quad I &\equiv I_0
 \end{alignat}
+\item $G_2$ can be solved by the Hamilton--Jacobi-like equation
+\begin{equation}
+\rfun{H}{q, \partial_q G_2} = \rfun{K}{J}.
+\end{equation}
+\item If the motion has a period $T$ and it requires $\Delta \varphi \coloneqq 
+\rbr{\partial_I K}\,T \equiv 2\pp$ (angle variable), it can be shown that
+\begin{equation}
+I = \frac{1}{2\pp}\oint p\,\dd q,
+\end{equation}
+thus the name action-angle variable comes.
+
 
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Adiabatic approximation}
+\begin{itemize}
+\item The variables above can be extended to $H = \rfun{H}{q, p; \lambda}$; 
+where a perturbative expansion is made in terms of $\epsilon = \dd \lambda / \dd 
+t$.
+\item It can be shown that the leading-order expansion gives
+\begin{equation}
+\vbr{\rfun{I}{t} - \rfun{I}{0}} \le C \epsilon,\quad 0 \le t \le \epsilon^{-1}
+\end{equation}
+\item Let $\omega$ be the angular frequency of the unperturbed system. If
+\begin{equation}
+\lambda^{-1} \epsilon \ll \omega,
+\end{equation}
+then $I$ varies only slightly during one quasi-period $2\pp/\omega$ and is 
+thus a good \alert{adiabatic invariance}.
+
+\end{itemize}
+
+\end{frame}
+
 
 
 \section*{Summary}
