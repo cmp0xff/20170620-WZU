@@ -331,14 +331,14 @@ a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 \begin{frame}{Space-time: localised Robertson--Walker metric}
 \begin{itemize}
 \item \alert{In}homogeneity and isotropy
-\begin{equation}
+\begin{empheq}[box=\fbox]{equation}
 \dd s^2 = -\dd t^2 + \rfun{a}{t, \vec{x}}\,\delta_{ij}\,\dd x^i\,\dd x^j.
-\end{equation}
+\end{empheq}
 \item Generalising the proper distance and Hubble parameter
 \begin{equation}
-\rfun{L}{1\to 2; t} = \int_{\vec x_1}^{\vec x_2}\sqrt{\rfun{a^2}{t,\vec 
+\rfun{L_{1\to 2}}{t} = \int_{\vec x_1}^{\vec x_2}\sqrt{\rfun{a^2}{t,\vec 
 x}}\,\dd l,\quad
-\rfun{\hH}{1\to 2; t} = \dot \frac{\rfun{L}{1\to 2}}{\rfun{L}{1\to 2}}
+\rfun{\hH_{1\to 2}}{t} = \frac{\dot L_{1\to 2}}{L_{1\to 2}}
 \end{equation}
 
 \item Einstein equations
@@ -374,13 +374,13 @@ fluctuation)
 \begin{frame}{Space-time: stochastic oscillator equation for $a$}
 \begin{itemize}
 \item Taking the trace of \cref{eq:E-20} leads to
-\begin{equation}
-\ddot a + \rfun{\varOmega^2}{t,\vec x}\, a = 0,
+\begin{empheq}[box=\fbox]{equation}
+\ddot a + \rfun{\Omega^2}{t,\vec x}\, a = 0,
 \label{eq:sho}
-\end{equation}
+\end{empheq}
 where
 \begin{equation}
-\varOmega^2 = \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
+\Omega^2 = \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
 \end{equation}
 which is viewed as a (random c-)number (and subject to fluctuation)
 
@@ -399,7 +399,7 @@ solving \cref{eq:sho}
 
 \begin{frame}{Parametric oscillator}
 \begin{itemize}
-\item If $\varOmega$ were definite and periodic in $t$, \cref{eq:sho} would be 
+\item If $\Omega$ were definite and periodic in $t$, \cref{eq:sho} would be 
 a Hill's equation, describing \alert{parametric oscillation} (see e.g.\ 
 \cite[§27]{Landau1976} and Wikipedia)
 \item General solution
@@ -408,10 +408,10 @@ a Hill's equation, describing \alert{parametric oscillation} (see e.g.\
 + c_2 \ee^{-\hH_{\vec x}t}\rfun{P_2}{t,\vec x}
 \end{equation}
 where $\hH_{\vec x} > 0$ (thus second term exponentially suppressed at late 
-time) and $P_i$'s have the same period as $\varOmega$.
-\item \textbf{Claim}: $\varOmega$ behaves \alert{quasi-periodically}, because 
-of $\sfun{\mathrm{Cov}}{\rfun{\varOmega^2}{t_1, \vec x}, 
-\rfun{\varOmega^2}{t_2, \vec x}}$ (see below)
+time) and $P_i$'s have the same period as $\Omega$.
+\item \textbf{Claim}: $\Omega$ behaves \alert{quasi-periodically}, because 
+of $\sfun{\mathrm{Cov}}{\rfun{\Omega^2}{t_1, \vec x}, 
+\rfun{\Omega^2}{t_2, \vec x}}$ (see below)
 
 \end{itemize}
 
@@ -420,16 +420,16 @@ of $\sfun{\mathrm{Cov}}{\rfun{\varOmega^2}{t_1, \vec x},
 
 \begin{frame}{Quasi-periodicity}
 \begin{itemize}
-\item Covariance of $\rfun{\varOmega^2}{t}$, taken from \cite{Wang2017}
+\item Covariance of $\rfun{\Omega^2}{t}$, taken from \cite{Wang2017}
 \begin{center}
 \includegraphics[width=.6\linewidth]{./graphics/FIG.2.png}
 \end{center}
 \item The solution is modified (at late time) to be
-\begin{equation}
+\begin{empheq}[box=\fbox]{equation}
 \rfun{a}{t,\vec x} \approx \ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}
 \rfun{P}{t,\vec x},
 \label{eq:approx-a}
-\end{equation}
+\end{empheq}
 where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
 
 \end{itemize}
@@ -440,16 +440,26 @@ where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
 \begin{itemize}
 \item The expressions for proper distance and Hubble parameter in terms of 
 \cref{eq:approx-a} are
-\begin{align}
-\rfun{L}{1 \to 2; t} &= \rfun{L}{0}\,\ee^{\hH t},\\
-\rfun{L}{1 \to 2; 0} &= \int_{\vec x_1}^{\vec x_2} \sqrt{\rfun{P^2}{t,\vec 
-x}}\,\dd t,\\
-\hH &= \frac{1}{t} \int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'.
-\end{align}
+\begin{equation}
+\rfun{L_{1\to 2}}{t} = \rfun{L}{0}\,\ee^{\hH t},\quad
+\rfun{L_{1\to 2}}{0} =
+\int_{\vec x_1}^{\vec x_2} \sqrt{\rfun{P^2}{t,\vec x}}\,\dd t,
+\end{equation}
+\begin{empheq}[box=\fbox]{equation}
+\hH = \frac{1}{t} \int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'.
+\end{empheq}
 \item It looks like that the authors assumed averaging $\hH_{\vec x}$ over a 
 long time smooths out the difference between different $\vec x$.
 
-\item $P$ and $L$ can be solved by WKB; the presentation will focus on $\hH$
+\item It was claimed that WKB gives
+\begin{equation}
+\rfun{a}{t,\vec x} \approx
+\frac{A_0 \ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}}{\sqrt{\Omega}}
+\rfun{\cos}{\int_0^t \rfun{\Omega}{t', \vec x}\,\dd t' + 
+\theta_{\vec x}}.
+\label{eq:wkb-sol}
+\end{equation}
+
 \end{itemize}
 
 \end{frame}
@@ -501,71 +511,164 @@ I = \frac{1}{2\pp}\oint p\,\dd q,
 \end{equation}
 thus the name action-angle variable comes.
 
-
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Adiabatic approximation}
+
+\begin{frame}{Adiabatic approximation}{See e.g.\ \cite{Henrard_1993}}
 \begin{itemize}
-\item The variables above can be extended to $H = \rfun{H}{q, p; \lambda}$; 
+\item The variables above can be extended to $H = \rfun{H}{q, p; \lambda}$;,
 where a perturbative expansion is made in terms of $\epsilon = \dd \lambda / \dd 
 t$.
 \item It can be shown that the leading-order expansion gives
 \begin{equation}
-\vbr{\rfun{I}{t} - \rfun{I}{0}} \le C \epsilon,\quad 0 \le t \le \epsilon^{-1}
+\rfun{I}{t} = \rfun{I}{0} +  \rfun{O}{\epsilon},\quad 0 \le t \le 
+\epsilon^{-1}
 \end{equation}
 \item Let $\omega$ be the angular frequency of the unperturbed system. If
 \begin{equation}
-\lambda^{-1} \epsilon \ll \omega,
+\lambda^{-1} \epsilon = \frac{1}{\lambda}\frde{\lambda}{t} \ll \omega,
+\label{eq:adiab-cond}
 \end{equation}
 then $I$ varies only slightly during one quasi-period $2\pp/\omega$ and is 
-thus a good \alert{adiabatic invariance}.
+thus a \alert{adiabatic invariance}.
 
 \end{itemize}
 
 \end{frame}
 
 
+\begin{frame}{Adiabaticity of \cref{eq:sho}}
+\begin{itemize}
+\item Using sharp-momentum cut-off $\varLambda$,
+\begin{align}
+\abr{\Omega^2} &= \frac{8\pp\nG}{3} \abr{{\dot{\phi}}^2} =
+\frac{\nG}{6\pp} \varLambda^4,\\
+\abr{{\dot\Omega}^2} &= \frac{8\pp\nG}{3} 
+\abr{{\ddot{\phi}}^2} = \frac{\nG}{9\pp} \varLambda^6.
+\end{align}
+\item Evaluating \cref{eq:adiab-cond}:
+\begin{equation}
+\frac{\dot\Omega}{\Omega} \sim
+\sqrt{\frac{\abr{\dot\Omega}^2}{\abr{\Omega^2}}} = \frac{2}{3} 
+\varLambda,\quad \Omega \sim \sqrt{\abr{\Omega^2}} = \frac{1}{\sqrt{6\pp}}
+\sqrt{\nG}\Lambda^2,
+\end{equation}
+so the adiabatic condition is satisfied if $\sqrt{\nG}\varLambda \to +\infty.$
+\item Cut-off much higher than the Planck scale?
 
-\section*{Summary}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Action-angle variables of \cref{eq:sho}}
+\begin{itemize}
+\item For fixed $\Omega$,
+\begin{equation}
+I = \frac{E}{\Omega} = \frac{1}{2} A_0^2,
+\label{eq:I-amp}
+\end{equation}
+where $A$ is the amplitude. It was argued that one can replace $A_0 \to A_0 
+\ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}$.
+\item Transforming $\rbr{a, \dot a}$ to $\rbr{\varphi, I}$
+\begin{equation}
+a = \sqrt{2I/\Omega}\sin\varphi,\quad
+\dot a = \sqrt{2I\Omega}\cos\varphi,
+\label{eq:trsf-aadot}
+\end{equation}
+so the canonical equations are
+\begin{equation}
+\frde{I}{t} = -I \frac{\dot \Omega}{\Omega} \cos2\varphi,\quad
+\frde{\varphi}{t} = \Omega + \frac{\dot \Omega}{2\Omega}\sin2\varphi.
+\end{equation}
+\item Integration yields
+\begin{equation}
+\rfun{I}{t} = \rfun{I}{0}\rfun{\exp}{-\int_0^t\frac{\dot\Omega}{2\Omega} 
+\cos2\varphi\,\dd t}
+\label{eq:int_I}
+\end{equation}
+
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Evaluation of the global Hubble parameter}
+\begin{itemize}
+\item Combining \cref{eq:I-amp,eq:int_I} gives
+$\hH_{\vec x} = -\frac{\dot\Omega}{2\Omega}\cos 2\varphi$.
+\item The global Hubble parameter thus reads
+\begin{equation}
+\hH = -\frac{1}{t}\Re\int_0^t \frac{\dot\Omega}{2\Omega} 
+\ee^{2\ii\varphi}\,\dd t' = -\frac{1}{t}\Re\int_{\varphi_0}^{\varphi}
+\frac{\dot\Omega}{2\Omega} \ee^{2\ii\varphi'}\frde{t'}{\varphi'}\,\dd\varphi.
+\end{equation}
+\item Completing the complex integration contour and picking only the main pole 
+suggest $\hH \sim \varLambda\,\ee^{-2\Im\varphi_{(0)}} = \varLambda\,\ee^{-2\Im 
+\rfun{\varphi}{t_{(0)}}}.$
+
+\item It was argued that $\rfun{\varphi}{t_{(0)}} \sim \Omega t_{(0)}$, where
+$\Omega \sim \sqrt{\nG}\varLambda$, $t_{(0)} \sim 
+\varLambda^{-1}$.
+
+\item The final expression of the global Hubble parameter reads
+\begin{empheq}[box=\fbox]{equation}
+\hH \sim \alpha\varLambda\,\ee^{-\beta\sqrt{\nG}\varLambda}.
+\end{empheq}
+
+\end{itemize}
+\end{frame}
+
+
+\section{Summary and comments}
 
 \begin{frame}{Summary}
 
   % Keep the summary *very short*.
 \begin{itemize}
-\item
-Compared the \alert{pure} and the \alert{thermal} descriptions of the
-radiation within the solvable dilaton gravity model
-\item
-Fourier-mode fluctuation: that of the thermal state \alert{diverges} faster
-than the vacuum case does at low energy, while the pure-state fluc.\ remains
-\alert{finite}; at high energies they \alert{converge}.
-\item
-Trace distance: goes exponentially \alert{small} with black hole 
-\alert{temperature} going to zero.
+\item Making of the oscillator equation \cref{eq:sho}:
+\begin{enumerate}
+\item Quantised Klein--Gordon field in flat space-time
+\item Classical, localised Robertson--Walker metric
+\end{enumerate}
+\item Solving  the oscillator equation \cref{eq:sho}:
+\begin{enumerate}
+\item Ignoring the stochastic frequency in most cases
+\item Parametric oscillation
+\item Adiabatic approximation
+\end{enumerate}
+\item Validation of the various approximation: numerics \cite{Wang2017}
+\begin{center}
+\includegraphics[width=.5\linewidth]{./graphics/FIG.4.png}
+\end{center}
+\item Summarised up to eq.~(75); The rest (eq.~(214); 3 appd.) contains 
+details and discussions
 \end{itemize}
   
   % The following outlook is optional.
-  \vskip0pt plus.5fill
-  \begin{itemize}
-  \item
-	Outlook in the proposed PhD study
-	\begin{itemize}
-	\item Further discussion within full CGHS, BTZ, etc.
-	\item Make use of the decoherence theory
-	\end{itemize}
-	\begin{itemize}
-	\item Nature of the microscopic degrees of freedom for BH entropy
-	\item Breakdown of the semi-classical approximations in QG
-    \end{itemize}
-%	\item Understand the dilaton gravity model
-%	\item Understand the Fourier-mode fluctuation
-%	\item Evaluate the real space correlator
-%	\item Understand practical meaning of trace distance
-%	\item Understand the regulator in total trace distance
-%	\item Evaluate the exact trace distance
-%	\item Include the gravitational wave functional
-  \end{itemize}
+  %\vskip0pt plus.5fill
+\end{frame}
+
+\begin{frame}{Comments}
+
+  % Keep the summary *very short*.
+\begin{itemize}
+\item Differential equation with fluctuating coefficients: stochastic 
+differential equation \cite{van-Kampen-2007}
+\begin{itemize}
+\item Famous case: Langevin equation for Brownian motion
+\end{itemize}
+\item Harmonic oscillator with stochastic frequency: studied, e.g.\ 
+\cite{Bourret_1973,Van_Kampen_1976}
+\item Applying quantum fluctuation to semi-classical Einstein equation: 
+studied, e.g.\ \cite{Hu_2008}
+
+\end{itemize}
+  
+  % The following outlook is optional.
+  %\vskip0pt plus.5fill
 \end{frame}
 
 
@@ -602,7 +705,7 @@ Trace distance: goes exponentially \alert{small} with black hole
 %  \end{thebibliography}
 \end{frame}
 
-\section<presentation>*{More on Trace Distance and Fidelity}
+%\section<presentation>*{More on Trace Distance and Fidelity}
 
 
 
