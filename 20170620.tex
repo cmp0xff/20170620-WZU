@@ -192,15 +192,16 @@ defernumbers=true]%
 \item If contributed by vacuum energy, the cosmological constant could
 \alert{differ \num{120} order-of-magnitude} from observation.
 \item \citeauthor{Wang2017} consider vacuum energy \alert{density} instead, 
-which is subject to \alert{fluctuation}, and their result moderates the problem.
-\item They assumed a localised RW metric and obtained FL-like equations for 
-$\rfun{a}{t,\vec{x}}$, whose coefficient contains quantum fluctuation.
+which is subject to \alert{fluctuation}, and their results could moderate the 
+problem.
+\item They assumed a \alert{localised RW metric} and obtained FL-like equations 
+for $\rfun{a}{t,\vec{x}}$, whose coefficient contains fluctuation, which is 
+evaluated from QFT in flat space-time.
 \item The equations leads to local Hubble parameters which fluctuate, but a
-global average could be defined.
-\item The solution to the equations is evaluated with the help of theories of
-parametric oscillator and adiabatic invariance.
-\item The result is qualitatively supported by numerical calculation and 
-further quantitative discussions.
+global average is claimed be defined.
+\item The solution to the equations is evaluated with various approximations.
+\item The results are qualitatively supported by numerical calculation and 
+further discussion.
 \end{itemize}
 
 \end{frame}
@@ -215,7 +216,7 @@ further quantitative discussions.
 G_{\mu\nu} + \lambda_\text{b} g_{\mu\nu} = 8\pp\nG T^\text{vac}_{\mu\nu}
 \label{eq:1}
 \end{equation}
-\item In Minkowski space-time, Lorentz invariance requires
+\item In Special Relativity, Lorentz invariance requires
 \begin{equation}
 T^\text{vac}_{\mu\nu} = -\rho^\text{vac}_{\mu\nu} \eta_{\mu\nu},
 \end{equation}
@@ -226,12 +227,12 @@ T^\text{vac}_{\mu\nu} = -\rho^\text{vac}_{\mu\nu} g_{\mu\nu}.
 \item Effectively, \cref{eq:1} can be written as
 \begin{align}
 G_{\mu\nu} + \lambda_\text{eff} g_{\mu\nu} = 0, \qquad
-\lambda_\text{eff} = \lambda_\text{b} + 8\pp\nG\rho^\text{vac};
+\lambda_\text{eff} \coloneqq \lambda_\text{b} + 8\pp\nG\rho^\text{vac};
 \label{eq:Einstein-2}\\
 G_{\mu\nu} = -8\pp\nG\rho^\text{vac}_\text{eff} g_{\mu\nu}, \qquad
-\rho^\text{vac}_\text{eff} = \rho^\text{vac} +
-\frac{\lambda_\text{b}}{8\pp\nG}
-\label{eq:Einstein-3}.
+\rho^\text{vac}_\text{eff} \coloneqq \rho^\text{vac} +
+\frac{\lambda_\text{b}}{8\pp\nG}.
+\label{eq:Einstein-3}
 \end{align}
 \end{itemize}
 \end{frame}
@@ -267,12 +268,12 @@ form
 vacuum fluctuation of all quantum fields, Electroweak phase transition, etc.
 
 \item $\lambda_\text{eff}$ by vacuum fluctuation evaluated in Minkowski space:
-taking a scalar field and using sharp-momentum cut-off (also see below),
+taking a \alert{scalar field} (also see below) and using sharp-momentum cut-off,
 \begin{equation}
 \left<\rho^\text{vac}\right> = \frac{\varLambda^4}{16\pp^2}.
 \end{equation}
-Setting $\varLambda = E_\text{P}$ results in a surpass of the observed value of
-$\lambda_\text{eff}$ by $\sim 10^{120}$.
+\item Setting $\varLambda = E_\text{P}$ results in a surpass of the observed 
+value of $\lambda_\text{eff}$ by a factor of $\sim 10^{120}$.
 
 \end{itemize}
 
@@ -283,15 +284,15 @@ $\lambda_\text{eff}$ by $\sim 10^{120}$.
 \begin{frame}{Matter: field and quantisation}
 
 \begin{itemize}
-\item Matter model
+\item Matter model: free neutral massless scalar field in flat space-time
 \begin{equation}
-\sfun{S_\text{m}}{\phi} = \int \dd^4 x\,\sbr{-\frac{1}{2}\eta^{\mu\nu}
+\sfun{S_\text{m}}{\phi} \coloneqq \int \dd^4 x\,\sbr{-\frac{1}{2}\eta^{\mu\nu}
 \rbr{\partial_\mu \phi}\rbr{\partial_\nu \phi}}
 \label{eq:matter-classical}
 \end{equation}
 \item Canonical quantisation
 \begin{equation}
-\rfun{\phi}{t,\vec{x}} = \int\frac{\dd^3 k}{\rbr{2\pp}^{3/2}} 
+\rfun{\phi}{t,\vec{x}} \coloneqq \int\frac{\dd^3 k}{\rbr{2\pp}^{3/2}} 
 \frac{1}{\sqrt{2\omega}}
 \rbr{a_{\vec{k}} \,\ee^{-\ii\rbr{\omega t - \vec{k}\cdot\vec{x}}} + 
 \text{h.c.}},
@@ -312,12 +313,17 @@ a_{\vec{k}_2}^\dagger}}
 
 \begin{frame}{Matter: fluctuating vacuum energy density}
 \begin{itemize}
-\item
-$\Ket{0}$ is an eigenstate of $H = \int \dd^3 x T_{00}$, because
+\item Hamiltonian
+\begin{equation}
+H \coloneqq \int \dd^3 x\,T_{00} = \frac{1}{2}\int \dd^3 k\,\omega\rbr{a_{\vec 
+k}a_{\vec k}^\dagger + a_{\vec k}^\dagger a_{\vec k}}.
+\end{equation}
+
+\item $\Ket{0}$ is an eigenstate of $H$, because it is defined by
 \begin{equation}
 a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 \end{equation}
-\item This is not the case for $T_{00}$, and
+\item This is not the case for $T_{00}$, and one has
 \begin{equation}
 \abr{\rbr{\Delta T_{00}}^2} = \frac{2}{3}\abr{T_{00}}^2,\qquad \abr{T_{00}} = 
 \frac{\varLambda^4}{16\pp^2}.
@@ -332,13 +338,14 @@ a_{\vec k} \Ket{0} \coloneqq 0,\quad \forall \vec k
 \begin{itemize}
 \item \alert{In}homogeneity and isotropy
 \begin{empheq}[box=\fbox]{equation}
-\dd s^2 = -\dd t^2 + \rfun{a}{t, \vec{x}}\,\delta_{ij}\,\dd x^i\,\dd x^j.
+\dd s^2 \coloneqq -\dd t^2 + \rfun{a}{t, \alert{\vec{x}}}
+\,\delta_{ij}\,\dd x^i\,\dd x^j.
 \end{empheq}
 \item Generalising the proper distance and Hubble parameter
 \begin{equation}
-\rfun{L_{1\to 2}}{t} = \int_{\vec x_1}^{\vec x_2}\sqrt{\rfun{a^2}{t,\vec 
-x}}\,\dd l,\quad
-\rfun{\hH_{1\to 2}}{t} = \frac{\dot L_{1\to 2}}{L_{1\to 2}}
+\rfun{L_{1\to 2}}{t} \coloneqq \int_{\vec x_1}^{\vec 
+x_2}\sqrt{\rfun{a^2}{t,\vec x}}\,\dd l,\quad
+\rfun{\hH_{1\to 2}}{t} \coloneqq \frac{\dot L_{1\to 2}}{L_{1\to 2}}
 \end{equation}
 
 \item Einstein equations
@@ -380,7 +387,7 @@ fluctuation)
 \end{empheq}
 where
 \begin{equation}
-\Omega^2 = \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
+\Omega^2 \coloneqq \frac{4\pp\nG}{3} g^{\mu\nu} T_{\mu\nu},
 \end{equation}
 which is viewed as a (random c-)number (and subject to fluctuation)
 
@@ -404,12 +411,12 @@ a Hill's equation, describing \alert{parametric oscillation} (see e.g.\
 \cite[§27]{Landau1976} and Wikipedia)
 \item General solution
 \begin{equation}
-\rfun{a}{t,\vec x} = c_1 \ee^{+\hH_{\vec x}t}\rfun{P_1}{t,\vec x}
-+ c_2 \ee^{-\hH_{\vec x}t}\rfun{P_2}{t,\vec x}
+\rfun{a}{t,\vec x} = c_1 \ee^{\alert{+}\hH_{\vec x}t}\rfun{P_1}{t,\vec x}
++ c_2 \ee^{\alert{-}\hH_{\vec x}t}\rfun{P_2}{t,\vec x}
 \end{equation}
 where $\hH_{\vec x} > 0$ (thus second term exponentially suppressed at late 
 time) and $P_i$'s have the same period as $\Omega$.
-\item \textbf{Claim}: $\Omega$ behaves \alert{quasi-periodically}, because 
+\item It was claimed that $\Omega$ behaves \alert{quasi-periodically}, because 
 of $\sfun{\mathrm{Cov}}{\rfun{\Omega^2}{t_1, \vec x}, 
 \rfun{\Omega^2}{t_2, \vec x}}$ (see below)
 
@@ -426,11 +433,13 @@ of $\sfun{\mathrm{Cov}}{\rfun{\Omega^2}{t_1, \vec x},
 \end{center}
 \item The solution is modified (at late time) to be
 \begin{empheq}[box=\fbox]{equation}
-\rfun{a}{t,\vec x} \approx \ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}
+\rfun{a}{t,\vec x} \approx \ee^{\alert{\int_0^t \dd}t'\, \rfun{\hH_{\vec 
+x}}{t'}}
 \rfun{P}{t,\vec x},
 \label{eq:approx-a}
 \end{empheq}
-where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
+where $\rfun{P}{t,\vec x}$ behaves also only \alert{quasi-}periodically (see 
+below).
 
 \end{itemize}
 
@@ -441,21 +450,20 @@ where $\rfun{P}{t,\vec x}$ behaves also only quasi-periodically (see below).
 \item The expressions for proper distance and Hubble parameter in terms of 
 \cref{eq:approx-a} are
 \begin{equation}
-\rfun{L_{1\to 2}}{t} = \rfun{L}{0}\,\ee^{\hH t},\quad
+\rfun{L_{1\to 2}}{t} = \rfun{L_{1\to 2}}{0}\,\ee^{\hH t},\quad
 \rfun{L_{1\to 2}}{0} =
 \int_{\vec x_1}^{\vec x_2} \sqrt{\rfun{P^2}{t,\vec x}}\,\dd t,
 \end{equation}
 \begin{empheq}[box=\fbox]{equation}
 \hH = \frac{1}{t} \int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'.
 \end{empheq}
-\item It looks like that the authors assumed averaging $\hH_{\vec x}$ over a 
-long time smooths out the difference between different $\vec x$.
+\item It looks like that the authors assumed averaging over a long distance 
+/ time smooths out the difference between different $\vec x$.
 
-\item It was claimed that WKB gives
+\item It was claimed that leading-order WKB gives
 \begin{equation}
-\rfun{a}{t,\vec x} \approx
-\frac{A_0 \ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}}{\sqrt{\Omega}}
-\rfun{\cos}{\int_0^t \rfun{\Omega}{t', \vec x}\,\dd t' + 
+\rfun{a}{t,\vec x} \approx \frac{A_0}{\sqrt{\Omega}}
+\rfun{\cos}{\alert{\int_0^t\dd}t'\,\rfun{\Omega}{t', \vec x}+ 
 \theta_{\vec x}}.
 \label{eq:wkb-sol}
 \end{equation}
@@ -491,7 +499,7 @@ transformation from $\rbr{q, p; H}$ to $\rbr{Q, P; K}$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Action-angle variables}
+\begin{frame}{Action-angle variables}{See e.g.\ \cite{Henrard_1993}}
 \begin{itemize}
 \item Consider a $\rfun{G_2}{q, J}$ which brings $\rbr{q, p; \rfun{H}{q, p}}$ 
 to $\rbr{\varphi, I; \rfun{K}{I}}$; note the time-independence
@@ -502,10 +510,10 @@ to $\rbr{\varphi, I; \rfun{K}{I}}$; note the time-independence
 \end{alignat}
 \item $G_2$ can be solved by the Hamilton--Jacobi-like equation
 \begin{equation}
-\rfun{H}{q, \partial_q G_2} = \rfun{K}{J}.
+\rfun{H}{q, \partial_q G_2} = \rfun{K}{I}.
 \end{equation}
-\item If the motion has a period $T$ and it requires $\Delta \varphi \coloneqq 
-\rbr{\partial_I K}\,T \equiv 2\pp$ (angle variable), it can be shown that
+\item If the motion has a period $T$ and one requires $\Delta \varphi \coloneqq 
+\rbr{\partial_I K}\,T \equiv 2\pp$, it can be shown that
 \begin{equation}
 I = \frac{1}{2\pp}\oint p\,\dd q,
 \end{equation}
@@ -517,9 +525,9 @@ thus the name action-angle variable comes.
 
 \begin{frame}{Adiabatic approximation}{See e.g.\ \cite{Henrard_1993}}
 \begin{itemize}
-\item The variables above can be extended to $H = \rfun{H}{q, p; \lambda}$;,
-where a perturbative expansion is made in terms of $\epsilon = \dd \lambda / \dd 
-t$.
+\item The variables above can be extended to $H = \rfun{H}{q, p; \lambda}$,
+where a perturbative expansion is made in terms of $\epsilon \coloneqq \dd 
+\lambda / \dd t$.
 \item It can be shown that the leading-order expansion gives
 \begin{equation}
 \rfun{I}{t} = \rfun{I}{0} +  \rfun{O}{\epsilon},\quad 0 \le t \le 
@@ -531,7 +539,7 @@ t$.
 \label{eq:adiab-cond}
 \end{equation}
 then $I$ varies only slightly during one quasi-period $2\pp/\omega$ and is 
-thus a \alert{adiabatic invariance}.
+thus a \alert{adiabatic invariant}.
 
 \end{itemize}
 
@@ -555,7 +563,8 @@ thus a \alert{adiabatic invariance}.
 \sqrt{\nG}\Lambda^2,
 \end{equation}
 so the adiabatic condition is satisfied if $\sqrt{\nG}\varLambda \to +\infty.$
-\item Cut-off much higher than the Planck scale?
+\item It looks like that the cut-off needs to be much higher than the Planck 
+scale.
 
 
 \end{itemize}
@@ -569,12 +578,14 @@ so the adiabatic condition is satisfied if $\sqrt{\nG}\varLambda \to +\infty.$
 I = \frac{E}{\Omega} = \frac{1}{2} A_0^2,
 \label{eq:I-amp}
 \end{equation}
-where $A$ is the amplitude. It was argued that one can replace $A_0 \to A_0 
-\ee^{\int_0^t \rfun{\hH_{\vec x}}{t'}\,\dd t'}$.
+where $A_0$ is the amplitude in the WKB solution \cref{eq:wkb-sol}. It was 
+argued that one can replace $A_0 \to A_0 \ee^{\int_0^t \rfun{\hH_{\vec 
+x}}{t'}\,\dd t'}$.
+
 \item Transforming $\rbr{a, \dot a}$ to $\rbr{\varphi, I}$
 \begin{equation}
-a = \sqrt{2I/\Omega}\sin\varphi,\quad
-\dot a = \sqrt{2I\Omega}\cos\varphi,
+a = \sqrt{2I/\Omega}\,\sin\varphi,\quad
+\dot a = \sqrt{2I\Omega}\,\cos\varphi,
 \label{eq:trsf-aadot}
 \end{equation}
 so the canonical equations are
@@ -584,8 +595,8 @@ so the canonical equations are
 \end{equation}
 \item Integration yields
 \begin{equation}
-\rfun{I}{t} = \rfun{I}{0}\rfun{\exp}{-\int_0^t\frac{\dot\Omega}{2\Omega} 
-\cos2\varphi\,\dd t}
+\rfun{I}{t} = \rfun{I}{0}\,\rfun{\exp}{-\int_0^t\frac{\dot\Omega}{2\Omega} 
+\cos2\varphi\,\dd t}.
 \label{eq:int_I}
 \end{equation}
 
@@ -606,8 +617,8 @@ $\hH_{\vec x} = -\frac{\dot\Omega}{2\Omega}\cos 2\varphi$.
 \frac{\dot\Omega}{2\Omega} \ee^{2\ii\varphi'}\frde{t'}{\varphi'}\,\dd\varphi.
 \end{equation}
 \item Completing the complex integration contour and picking only the main pole 
-suggest $\hH \sim \varLambda\,\ee^{-2\Im\varphi_{(0)}} = \varLambda\,\ee^{-2\Im 
-\rfun{\varphi}{t_{(0)}}}.$
+suggest $\hH \sim \varLambda\,\ee^{-2\Im\varphi_{(0)}} = 
+\varLambda\,\ee^{-2\Im \rfun{\varphi}{t_{(0)}}}.$
 
 \item It was argued that $\rfun{\varphi}{t_{(0)}} \sim \Omega t_{(0)}$, where
 $\Omega \sim \sqrt{\nG}\varLambda$, $t_{(0)} \sim 
@@ -620,6 +631,36 @@ $\Omega \sim \sqrt{\nG}\varLambda$, $t_{(0)} \sim
 
 \end{itemize}
 \end{frame}
+
+\section{Numerical validation}
+
+\begin{frame}{Numerical simulation}{Figures from \cite{Wang2017}}
+
+\begin{itemize}
+\item Discretise to get $\cbr{\phi_{\vec k}}$
+\item Ground-state field is described by a positive Wigner function
+\begin{equation}
+\rfun{W}{\cbr{\phi_{\vec k}}, \cbr{\pi_{\vec k}}, t} = \prod_{\vec k}
+\frac{1}{\pp}\rfun{\exp}{-\frac{\pi^2_{\vec k}}{\omega}-\phi^2_{\vec k} \omega}.
+\end{equation}
+
+\end{itemize}
+
+\begin{columns}
+
+\begin{column}{.49\textwidth}
+Higher cut-off gives lower $\hH$\\
+\includegraphics[width=\linewidth]{./graphics/FIG.4.png}
+\end{column}
+\begin{column}{.49\textwidth}
+Fitting $\rfun{\ln}{\hH/\varLambda}$ gives $\alpha$ and $\beta$\\
+\includegraphics[width=\linewidth]{./graphics/FIG.6.png}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
 
 
 \section{Summary and comments}
@@ -635,16 +676,15 @@ $\Omega \sim \sqrt{\nG}\varLambda$, $t_{(0)} \sim
 \end{enumerate}
 \item Solving  the oscillator equation \cref{eq:sho}:
 \begin{enumerate}
-\item Ignoring the stochastic frequency in most cases
+\item Ignoring the Stochasticity in most calculation
 \item Parametric oscillation
+\item WKB approximation
 \item Adiabatic approximation
 \end{enumerate}
-\item Validation of the various approximation: numerics \cite{Wang2017}
-\begin{center}
-\includegraphics[width=.5\linewidth]{./graphics/FIG.4.png}
-\end{center}
-\item Summarised up to eq.~(75); The rest (eq.~(214); 3 appd.) contains 
-details and discussions
+\item Validation of the various approximation: numerics
+
+\item Summarised up to eq.~(75); The rest (up to eq.~(214); 3 appendixes) 
+contains more details and discussions
 \end{itemize}
   
   % The following outlook is optional.
@@ -659,6 +699,10 @@ details and discussions
 differential equation \cite{van-Kampen-2007}
 \begin{itemize}
 \item Famous case: Langevin equation for Brownian motion
+\begin{equation}
+m\dot {\vec v} + \lambda \vec v = \rfun{\vec \eta}{t}
+\end{equation}
+
 \end{itemize}
 \item Harmonic oscillator with stochastic frequency: studied, e.g.\ 
 \cite{Bourret_1973,Van_Kampen_1976}
